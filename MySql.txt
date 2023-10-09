@@ -1,0 +1,5 @@
+create database ecommerce;
+use ecommerce;
+
+select * from meghanatextiles;
+select * from meghana_login;
