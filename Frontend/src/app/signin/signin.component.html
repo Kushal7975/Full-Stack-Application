@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <h2>Update Your Detials</h2>
+            <br>
+            <br>
+            <form #updateform="ngForm" (ngSubmit)="updatedata(updateform)">
+                <label>CID : </label>
+                <br>
+                <input type="number" name="cid" id="cid" #cid (ngModel)="(cid)" />
+                <br />
+                <label>First Name : </label>
+                <br>
+                <input type="text" name="fname" id="fname" #fname (ngModel)="(fname)" />
+                <br />
+                <label>Middle Name : </label>
+                <br>
+                <input type="text" name="mname" id="mname" #mname (ngModel)="(mname)" />
+                <br />
+                <label>Last Name : </label>
+                <br>
+                <input type="text" name="lname" id="lname" #lname (ngModel)="(lname)" />
+                <br />
+                <label>Email : </label>
+                <br>
+                <input type="email" name="email" id="email" #email (ngModel)="(email)" />
+                <br />
+                <label>Password : </label>
+                <br>
+                <input type="password" name="password" id="password" #password (ngModel)="(password)" />
+                <br />
+                <label>Location : </label>
+                <br>
+                <input type="text" name="location" id="location" #locatiion (ngModel)="(locatiion)" />
+                <br />
+                <br>
+                <button type="submit" class="btn btn-success" (click)="update()">Update</button>
+            </form>
+        </div>
+        <div class="col-2">
+            <h2>View Your Details</h2>
+            <br>
+            <br>
+            <table border="2">
+                <thead>
+                    <tr>
+                        <th>CId</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let d of data">
+                        <td>{{ d.cid }}</td>
+                        <td>{{ d.fname }}</td>
+                        <td>{{ d.mname }}</td>
+                        <td>{{ d.lname }}</td>
+                        <td>{{ d.email }}</td>
+                        <td>{{ d.password }}</td>
+                        <td>{{ d.location }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <button type="button" (click)="viewdata()" class="btn btn-success">View</button>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

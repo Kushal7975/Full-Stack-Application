@@ -1,0 +1,45 @@
+<div class="small-container">
+  <div class="row row-2">
+    <h2>All Products</h2>
+    <select>
+      <option>Default Shorting</option>
+      <option>Short by price</option>
+      <option>Short by popularity</option>
+      <option>Short by rating</option>
+      <option>Short by sale</option>
+    </select>
+  </div>
+
+  <div class="grid" id="productList" *ngFor="let product of products">
+    <div class="col-4">
+      <img src="{{product.pimg}}" />
+      <h4>{{product.pname}}</h4>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>Rs.{{product.pprice}}</p>
+      <div class="content">
+        <button type="button" class="btn" (click)="inc(product)"><i class="fa fa-plus"></i></button>
+        <span>{{product.pqnt}}</span>
+        <button type="button" class="btn" (click)="dec(product)"><i class="fa fa-minus"></i></button>
+      </div>
+      <br>
+      <button class="btn btn-primary shop-item-button" (click)="addCart(product)">Add to cart</button>
+      <br>
+    </div>
+  </div>
+  <br>
+  <div class="page-btn">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>&#8594;</span>
+  </div>
+</div>
+
+<app-footer></app-footer>

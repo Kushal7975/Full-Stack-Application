@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/84d0fb1cc8.js" crossorigin="anonymous"></script>
+
+<section class="h-100 h-custom" style="background: radial-gradient(#fff, #ffd6d6)">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div style="background: radial-gradient(#fff, #ffd6d6)">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp" class="w-100"
+            style="
+              border-top-left-radius: 0.3rem;
+              border-top-right-radius: 0.3rem;
+            " alt="Sample photo" />
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Register Here</h3>
+
+            <form #insertform="ngForm" class="px-md-2" (ngSubmit)="insertdata(insertform)">
+              <div class="form-outline mb-4">
+                <label class="form-label">Enter First Name <span style="color: red">*</span> </label>
+                <input type="text" id="fname" name="fname" class="form-control" required (ngModel)="fname"
+                  #fname="ngModel" />
+                <div *ngIf="fname.invalid && (fname.dirty || fname.touched)">
+                  <div *ngIf="fname.errors" class="text-danger">First Name is required</div>
+                </div>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label">Enter Middle Name</label>
+                <input type="text" id="mname" name="mname" class="form-control" #mname (ngModel)="(mname)" />
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label">Enter Last Name <span style="color: red">*</span></label>
+                <input type="text" id="lname" name="lname" class="form-control" required (ngModel)="(lname)"
+                  #lname="ngModel" />
+              </div>
+              <div *ngIf="lname.invalid && (lname.dirty || lname.touched)">
+                <div *ngIf="lname.errors" class="text-danger">Last Name is required</div>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label">Enter Email <span style="color: red">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" required (ngModel)="(email)"
+                  #email="ngModel" />
+              </div>
+              <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                <div *ngIf="email.errors" class="text-danger">Email is required</div>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label">Enter Password <span style="color: red">*</span></label>
+                <input type="password" id="password" name="password" class="form-control" required
+                  (ngModel)="(password)" #password="ngModel" />
+              </div>
+              <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                <div *ngIf="password.errors" class="text-danger">Password is required</div>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label">Re-Enter Password <span style="color: red">*</span></label>
+                <input type="password" id="dpassword" name="dpassword" class="form-control" required
+                  (ngModel)="(dpassword)" #dpassword="ngModel" />
+              </div>
+              <div *ngIf="dpassword.invalid && (dpassword.dirty || dpassword.touched)">
+                <div *ngIf="dpassword.errors" class="text-danger">Re-Enter Password</div>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label">Enter City <span style="color: red">*</span></label>
+                <input type="text" id="location" name="location" class="form-control" required (ngModel)="(location)"
+                  #location="ngModel" />
+              </div>
+              <div *ngIf="location.invalid && (location.dirty || location.touched)">
+                <div *ngIf="location.errors" class="text-danger">Location Password</div>
+              </div>
+              <label class="form-label">Select Gender</label>
+              <div class="col-md-6 mb-4">
+                <select class="select">
+                  <option value="1" disabled>Gender</option>
+                  <option value="2">Female</option>
+                  <option value="3">Male</option>
+                  <option value="4">Other</option>
+                </select>
+              </div>
+
+              <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                <div class="col-md-6">
+                  <div class="form-outline">
+                    <label class="form-label">Pin code <span style="color: red">*</span></label>
+                    <input type="number" id="pincode" name="pincode" class="form-control" required (ngModel)="(pincode)"
+                      #pincode="ngModel" />
+                  </div>
+                  <div *ngIf="pincode.invalid && (pincode.dirty || pincode.touched)">
+                    <div *ngIf="pincode.errors" class="text-danger">Pincode is required</div>
+                  </div>
+                </div>
+              </div>
+
+              <input type="submit" class="btn btn-success btn-lg mb-1" value="Submit" onclick="submit()" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

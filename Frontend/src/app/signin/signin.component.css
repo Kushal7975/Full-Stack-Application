@@ -1,0 +1,33 @@
+.container {
+    max-width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: radial-gradient(#fff, #ffd6d6);
+}
+
+.row {
+    margin-left: 20px;
+    padding: 20px;
+
+}
+
+.col-2 {
+    flex-basis: 25%;
+    padding: 10px;
+    height: 100%;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 40px;
+}
